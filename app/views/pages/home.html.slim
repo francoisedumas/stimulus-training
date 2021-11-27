@@ -1,0 +1,5 @@
+h1 Welcome to your Stimulus trail!
+
+= content_tag :div, nil, data: {controller: "hello"} do
+  h2 data-hello-target="heading" This is the home page
+  .btn.btn-primary data-action="click->hello#greet" Click me to change the title
