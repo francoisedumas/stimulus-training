@@ -1,16 +1,10 @@
 import { Controller } from 'stimulus';
 export default class extends Controller {
+  static values = { sound: String }
 
-  play(e) {
-    console.log("Hey")
-    console.log(e.path[1])
-    const audio_name = e.path[1].getAttribute('value')
-    const sound = new Audio(this.data.get(audio_name));
+  play() {
+    const sound_path = `sounds/${this.soundValue}`
+    const sound = new Audio(sound_path);
     sound.play();
   }
-
-  // $(".audioButton").on("click", function() {
-  //   $(".audio-play")[0].currentTime = 0;
-  //   return $(".audio-play")[0].play();
-  // });
 }
