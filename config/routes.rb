@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/drum", to: "pages#drum"
   get "/clock", to: "pages#clock"
+  get "/css-variables", to: "pages#css_variables"
 end

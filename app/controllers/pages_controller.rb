@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def clock
   end
+
+  def css_variables
+  end
 end
