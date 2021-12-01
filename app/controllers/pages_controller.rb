@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def drum
+  end
 
+  def clock
   end
 end
