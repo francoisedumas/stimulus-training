@@ -1,7 +1,7 @@
 import { Controller } from 'stimulus';
 
 export default class extends Controller {
-  static values = { sizing: String, name: String, step: Number }
+  static values = { sizing: String, name: String, step: String }
 
   handleUpdate () {
     console.log(this.sizingValue)
