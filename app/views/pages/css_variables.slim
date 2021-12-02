@@ -4,7 +4,7 @@
 
   .controls
     label for="spacing" Spacing:
-    input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px"
+    input id="spacing" type="range"  min="10" max="200" data = { controller: "css", "css-sizing-value":"px", "css-name-value":"spacing", "css-step-value":10, action:"change->css#handleUpdate" }
 
     label for="blur" Blur:
     input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px"
