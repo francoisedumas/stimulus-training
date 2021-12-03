@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/drum", to: "pages#drum"
   get "/clock", to: "pages#clock"
   get "/css-variables", to: "pages#css_variables"
+  get "/calendar", to: "pages#calendar"
 end

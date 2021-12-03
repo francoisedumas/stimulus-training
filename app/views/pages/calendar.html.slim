@@ -1,0 +1,7 @@
+.calendar
+  .form-calendar
+    = form_tag calendar_path, method: :get, data: { controller: "form-submit" } do
+      = date_field_tag :date,
+        params[:date],
+        data: { action: "change->form-submit#handleChange" }
+  .date-display data-form-submit-target="day" = @selected_date
