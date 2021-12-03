@@ -7,22 +7,7 @@ Then run `bundle` in your terminal. That's it!
 # Stimulus setup
 
 In your terminal
-`yarn add stimulus`
-`mkdir app/javascript/controllers`
-`touch app/javascript/controllers/index.js`
-
-Then in the `index.js` file add
-```javascript
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
-
-const application = Application.start()
-const context = require.context(".", true, /\.js$/)
-application.load(definitionsFromContext(context))
-```
-
-In the file app/javascript/packs/application.js add
-`import 'controllers'`
+`rails webpacker:install:stimulus`
 
 # Your first Stimulus
 
