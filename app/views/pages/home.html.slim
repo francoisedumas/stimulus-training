@@ -38,7 +38,7 @@ flex.flex-col.border-solid.border-white.border-8.mb-5.pb-5
       li.px-6.py-4.text-center.bg-green-300 Green
 
 flex.flex-col.border-solid.border-white.border-8.mb-5
-  h2.bg-black.text-white.text-center.text-4xl.font-bold.pt-2.pb-2 Day-4 The classic toggle
+  h2.bg-black.text-white.text-center.text-4xl.font-bold.pt-2.pb-2 Day-5 Build a drum
   .drum
     .keys
       .key data = { controller: "drum", action:"click->drum#play keydown@window->drum#playKeyboard", "drum-sound-value":"clap.wav", "drum-key-value":65}
@@ -68,3 +68,17 @@ flex.flex-col.border-solid.border-white.border-8.mb-5
       .key data = { controller: "drum", action:"click->drum#play keydown@window->drum#playKeyboard", "drum-sound-value":"tink.wav", "drum-key-value":76}
         kbd L
         span class="sound" tink
+
+flex.flex-col.border-solid.border-white.border-8.mb-5.pb-5
+  h2.bg-black.text-white.text-center.text-4xl.font-bold.pt-2.pb-2.mb-5 Day-6 Hide and Show
+  .flex.flex-row.justify-center.items-center data-controller="password"
+    input class="w-1/4 px-4 py-1 text-gray-900 rounded-sm focus:outline-none mr-2" placeholder="Choose a password" data-password-target="unhide" type="password"
+
+    button data-password-target="eye" data-action="click->password#show" Show
+
+footer.flex.flex-row.justify-around.w-full.mx-0.my-auto.p-10
+    a href="https://github.com/francoisedumas" alt="Github" target="_blank"
+      i class="fab fa-github"
+    a href="https://www.linkedin.com/in/francois-dumas-lattaque/" alt="Linkedin" target="_blank"
+      i class="fab fa-linkedin"
+    p Made with <i class="fas fa-heart text-red-400"></i> in Nantes!
