@@ -5,8 +5,8 @@ export default class extends Controller {
   connect() {
     console.log("hello from StimulusJS")
   }
-  greet() {
-    console.log("click")
-    this.headingTarget.innerHTML = "Hello World"
+  greet(e) {
+    console.log(e)
+    this.headingTarget.innerHTML = "Day 1 checked ✅"
   }
 }
