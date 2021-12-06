@@ -7,9 +7,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def drum
-  end
-
   def css_variables
   end
 end
