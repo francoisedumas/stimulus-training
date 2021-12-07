@@ -33,11 +33,10 @@ platform is x86_64-linux. Add the current platform to the lockfile with
 It's been solved by removing my Gemfile, bundling and running `bundle lock --add-platform x86_64-linux`
 [A good article about it here](https://www.moncefbelyamani.com/understanding-the-gemfile-lock-file/)
 
-## Solving issue with Sqlite3
+### Solving issue with Sqlite3
 
-I am not using any DB in this exercise so no issue with Sqlite3 ;)
+If using Sqlite3 you have the next error with Heroku `Detected sqlite3 gem which is not supported on Heroku:` To solve it follow the [article here](https://devcenter.heroku.com/articles/sqlite3)
 
 ### Deploy & migrate
 
 Now run `git push heroku master `
-
