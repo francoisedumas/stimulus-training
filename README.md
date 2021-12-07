@@ -40,3 +40,10 @@ export default class extends Controller {
   }
 }
 ```
+
+# Tailwind setup
+
+In your terminal
+`bundle add tailwindcss-rails`
+`rails tailwindcss:install`
+Create a file `tailwind.config.js`
