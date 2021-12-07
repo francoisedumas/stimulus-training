@@ -1,45 +1,17 @@
-# Slim setup
+<img width="1247" alt="Screenshot 2564-12-07 at 17 12 33" src="https://user-images.githubusercontent.com/33062224/145065870-ed82f333-2ef7-4f5a-8143-c2afcf0e6df5.png">
 
-Add to the Gemfile
-`gem "slim-rails"`
-Then run `bundle` in your terminal. That's it!
+Find almost 30 exemples of Stimulus real application!
 
 # Stimulus setup
 
 In your terminal
 `rails webpacker:install:stimulus`
 
-# Your first Stimulus
+# Slim setup
 
-In your terminal
-`rails g controller pages home`
-In your `config/routes.rb` add
-`root to "pages#home"`
-In the app/views/pages/home.html.erb file add
-```
-h1 Welcome to your Stimulus trail!
-
-= content_tag :div, nil, data: {controller: "hello"} do
-  h2 data-hello-target="heading" This is the home page
-  .btn.btn-primary data-action="click->hello#greet" Click me to change the title
-```
-Let's create your first Stimulus controller in your terminal do
-`touch app/javascript/controllers/hello_controller.js`
-In the app/javascript/controllers/hello_controller.js add
-```javascript
-import { Controller } from 'stimulus';
-export default class extends Controller {
-  static targets = ["heading"]
-
-  connect() {
-    console.log("hello from StimulusJS")
-  }
-  greet() {
-    console.log("click")
-    this.headingTarget.innerHTML = "Hello World"
-  }
-}
-```
+Add to the Gemfile
+`gem "slim-rails"`
+Then run `bundle` in your terminal. That's it!
 
 # Tailwind setup
 
@@ -47,3 +19,25 @@ In your terminal
 `bundle add tailwindcss-rails`
 `rails tailwindcss:install`
 Create a file `tailwind.config.js`
+
+# Deploying with Heroku
+
+## Solving issue with Gemfile.lock
+I had issues with the Gemfile.lock and with the next error
+```
+Your bundle only supports platforms ["x86_64-darwin-19"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with
+`bundle lock --add-platform x86_64-linux` and try again.
+```
+
+It's been solved by removing my Gemfile, bundling and running `bundle lock --add-platform x86_64-linux`
+[A good article about it here](https://www.moncefbelyamani.com/understanding-the-gemfile-lock-file/)
+
+## Solving issue with Sqlite3
+
+I am not using any DB in this exercise so no issue with Sqlite3 ;)
+
+### Deploy & migrate
+
+Now run `git push heroku master `
+
