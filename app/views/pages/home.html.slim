@@ -76,9 +76,33 @@ flex.flex-col.border-solid.border-white.border-8.mb-5.pb-5
 
     button data-password-target="eye" data-action="click->password#show" Show
 
+flex.flex-col.border-solid.border-white.border-8.mb-5.pb-5
+  h2.bg-black.text-white.text-center.text-4xl.font-bold.pt-2.pb-2.mb-5 Day-7 Checkbox
+  = form_tag root_path(anchor: "vegetables"), method: :get, data: { controller: "checkboxes" } do
+    .flex.flex-row.justify-around.w-full id="vegetables"
+      - @vegetables.each do |vegetable|
+        .
+          = check_box_tag('vegetables[]',
+                          vegetable,
+                          params[:vegetables].present? ? params[:vegetables].include?(vegetable) : false,
+                          id:"#{vegetable}",
+                          class:"mr-2",
+                          data: { action: "change->checkboxes#check", "checkboxes-target":"checkbox" })
+          label for="#{vegetable}"
+            . class="fas fa-#{vegetable}"
+            | &nbsp;
+            = vegetable.capitalize
+    .flex.flex-row.justify-around.w-full
+      = submit_tag "submit", data: { "checkboxes-target":"button" }, disabled: true, class:"text-center text-white bg-black hover:bg-white hover:text-black text-sm p-2 mt-5 mb-5 cursor-pointer w-2/5 disabled:cursor-not-allowed disabled:opacity-50"
+
 footer.flex.flex-row.justify-around.w-full.mx-0.my-auto.p-10
     a href="https://github.com/francoisedumas" alt="Github" target="_blank"
       i class="fab fa-github"
     a href="https://www.linkedin.com/in/francois-dumas-lattaque/" alt="Linkedin" target="_blank"
       i class="fab fa-linkedin"
-    p Made with <i class="fas fa-heart text-red-400"></i> in Nantes!
+    .
+      | Made with
+      | &nbsp;
+      .fas.fa-heart.text-red-400
+      | &nbsp;
+      | in Nantes!

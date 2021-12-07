@@ -5,6 +5,9 @@ class PagesController < ApplicationController
     else
       @selected_date = "Select a day"
     end
+
+    @vegetables = ["carrot", "seedling", "lemon"]
+    # raise
   end
 
   def css_variables
