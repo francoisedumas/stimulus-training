@@ -4,8 +4,12 @@ export default class extends Controller {
   static targets = ["checkbox", "button"]
 
   check() {
-    this.checkboxTargets.forEach(
-      checkbox => {}
-    )
+    if (this.checkboxTargets.some(x => x.checked)) {
+      this.toggle()
+    }
+  }
+
+  toggle() {
+    this.buttonTarget.disabled = false
   }
 }
